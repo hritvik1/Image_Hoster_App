@@ -1,6 +1,6 @@
-package com.imagehoster.ImageHosterApp.service;
+package com.hritvik.ImageHosterApp.service;
 
-import com.imagehoster.ImageHosterApp.model.Image;
+import com.hritvik.ImageHosterApp.model.Image;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

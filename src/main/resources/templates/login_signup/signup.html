@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head th:replace="banner_ls :: banner_ls-style">
+        <meta charset="UTF-8">
+        <title>Image Hoster - SignUp</title>
+    </head>
+    <body>
+        <div th:replace="banner_ls :: main_header"></div>
+        <h1 id="login_head">SignUp</h1>
+        <form id="form">
+            <label for="username">Username:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="username" /><br><br>
+
+            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="email" id="email" /><br><br>
+
+            <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="password" id="password" /><br><br>
+
+            <input id="sub" type="submit" value="SignUp" />
+        </form>
+    </body>
+</html>

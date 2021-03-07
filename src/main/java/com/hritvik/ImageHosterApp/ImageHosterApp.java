@@ -1,4 +1,4 @@
-package com.imagehoster.ImageHosterApp;
+package com.hritvik.ImageHosterApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

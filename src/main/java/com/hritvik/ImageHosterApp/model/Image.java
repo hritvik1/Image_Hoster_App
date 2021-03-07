@@ -1,4 +1,4 @@
-package com.imagehoster.ImageHosterApp.model;
+package com.hritvik.ImageHosterApp.model;
 
 import java.util.Date;
 
