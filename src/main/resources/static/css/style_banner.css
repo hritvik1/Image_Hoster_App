@@ -25,9 +25,11 @@ body {
 }
 #login {
     color: #A52A2A;
+    /*display: none;*/
 }
 #signup {
     color: #DAA520;
+    /*display: none;*/
 }
 #home {
     color: #F08080;
@@ -101,19 +103,29 @@ input:focus {
     font-size: 16px;
 }
 #show_name {
-    font-family: 'Courgette', cursive;
-    margin-right: 22px;
-    font-size: 27px;
+    font-family: 'Itim', cursive;
+    margin-right: 5%;
+    font-size: 30px;
     text-decoration: none;
     color: #6b0af2;
+    display: none;
 }
 #show_name span {
     color: #eb5a07;
 }
-#show_imguploadbtn {
+#show_logout {
     margin-right: 50%;
+    font-size: 30px;
+    font-family: 'Gochi Hand', cursive;
+    color: #00a685;
+    text-decoration: underline;
+    display: none;
+}
+#show_imguploadbtn {
+    margin-right: -20px;
     font-size: 30px;
     font-family: 'Gochi Hand', cursive;
     color: #0a5bf2;
     text-decoration: underline;
+    display: none;
 }

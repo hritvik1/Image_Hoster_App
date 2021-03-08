@@ -1,3 +1,0 @@
-function displayUser() {
-    alert("hi")
-}

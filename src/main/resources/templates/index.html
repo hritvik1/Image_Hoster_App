@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Image Hoster</title>
     </head>
-    <body>
+    <body onload="validateLogin()">
         <div th:replace="banner :: main_header"></div>
         <main>
             <!-- Iterating through each image and displaying the image, its title and the date on which it is posted-->
@@ -18,4 +18,16 @@
             </post>
         </main>
     </body>
+    <script th:inline="javascript">
+        function validateLogin() {
+            const logusr = /*[[${session.LoggedUser}]]*/ 'User_Name';
+            if(logusr != null) {
+                document.getElementById("show_name").style.display = "inline"
+                document.getElementById("show_imguploadbtn").style.display = "inline"
+                document.getElementById("show_logout").style.display = "inline"
+                document.getElementById("login").style.display = "none"
+                document.getElementById("signup").style.display = "none"
+            }
+        }
+    </script>
 </html>

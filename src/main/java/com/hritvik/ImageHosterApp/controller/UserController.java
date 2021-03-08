@@ -32,13 +32,15 @@ public class UserController {
         }
         else {
             session.setAttribute("LoggedUser", existingUser);
+            session.setAttribute("usr", existingUser.getUsername());
+            session.setAttribute("loginState", true);
             System.out.println("User Found!!!");
             return "redirect:/";
         }
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/login_signup/signup")
-    public String Registration(Model model) {
+    public String signup(Model model) {
         User user = new User();
         UserProfile userProfile = new UserProfile();
         user.setUserProfile(userProfile);
@@ -47,14 +49,14 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/login_signup/signup")
-    public String userRegistration(User user) {
-        userService.registerUser(user);
+    public String signupUser(User user) {
+        userService.signupUser(user);
         return "redirect:/login_signup/login";
     }
 
-//    @RequestMapping(value = "/users/logout")
-//    public String userLogout(HttpSession session) {
-//        session.invalidate();
-//        return "redirect:/";
-//    }
+    @RequestMapping(value = "logout")
+    public String userLogout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login_signup/login";
+    }
 }

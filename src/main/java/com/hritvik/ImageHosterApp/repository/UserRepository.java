@@ -2,7 +2,6 @@ package com.hritvik.ImageHosterApp.repository;
 
 import com.hritvik.ImageHosterApp.model.User;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 
 @Repository
@@ -11,7 +10,7 @@ public class UserRepository {
     @PersistenceUnit(unitName = "imageapp")
     private EntityManagerFactory entityManagerFactory;
 
-    public void registerUser(User newUser) {
+    public void signupUser(User newUser) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try {

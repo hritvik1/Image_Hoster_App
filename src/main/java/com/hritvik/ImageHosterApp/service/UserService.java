@@ -21,7 +21,7 @@ public class UserService {
         }
     }
 
-    public void registerUser(User newUser) {
-        userRepository.registerUser(newUser);
+    public void signupUser(User newUser) {
+        userRepository.signupUser(newUser);
     }
 }
