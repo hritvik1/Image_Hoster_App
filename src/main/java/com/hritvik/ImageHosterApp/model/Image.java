@@ -1,31 +1,28 @@
 package com.hritvik.ImageHosterApp.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "image")
 public class Image {
 
-    //id of the image
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
     private Integer id;
 
-    //title of the image
+    @Column(name = "title")
     private String title;
 
-    //The image in Base64 format
+    @Column(name = "imagefile")
     private String imageFile;
 
-    //Description of the image
+    @Column(name = "description")
     private String description;
 
-    //Date on which the image is posted
+    @Column(name = "date")
     private Date date;
-
-    //Write the constructor for id, title, imageFile, and date
-    public Image(Integer id, String title, String imageFile, Date date) {
-        this.id = id;
-        this.title = title;
-        this.imageFile = imageFile;
-        this.date = date;
-    }
 
     public Integer getId() {
         return id;
@@ -66,7 +63,4 @@ public class Image {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    //Write getter and setter for all the attributes
-    
 }
