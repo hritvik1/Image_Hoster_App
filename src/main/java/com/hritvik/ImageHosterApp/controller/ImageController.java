@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 @Controller
-public class HomeController {
+public class ImageController {
 
     @Autowired
     private ImageService imageService;
@@ -22,11 +22,6 @@ public class HomeController {
         List<Image> images = imageService.getAllImages();
         model.addAttribute("images", images);
         return "index";
-    }
-
-    @RequestMapping(value = "/login_signup/login")
-    public String login(Model model) {
-        return "login_signup/login";
     }
 
     @RequestMapping(value = "/login_signup/signup")

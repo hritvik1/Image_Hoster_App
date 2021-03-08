@@ -7,14 +7,14 @@
     <body>
         <div th:replace="banner_ls :: main_header"></div>
         <h1 id="head">Login</h1>
-        <form id="form">
+        <form id="form" method="post" th:object="${user}" th:action="@{/login_signup/login}">
             <label for="username">Username:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="username" required /><br><br>
+            <input type="text" th:field="*{username}" id="username" required /><br><br>
 
             <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="password" id="password" required /><br><br>
+            <input type="password" th:field="*{password}" id="password" required /><br><br>
 
-            <input id="sub" onclick="displayUser()" type="submit" value="Login" />
+            <input id="sub" type="submit" value="Login" />
         </form>
     </body>
     <script th:src="@{/js/display_loggeduser.js}"></script>
