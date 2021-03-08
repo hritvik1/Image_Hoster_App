@@ -51,3 +51,49 @@ hr {
 .pill:before, .pill:after {
     content: '';
 }
+#head {
+    margin-top: 110px;
+    font-size: 60px;
+    font-family: 'Gochi Hand', cursive;
+    text-align: center;
+}
+#form {
+    text-align: center;
+    margin-top: 50px;
+}
+label {
+    font-size: 22px;
+}
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 18px;
+    color: darkred;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+input:focus {
+    outline: none;
+}
+#sub {
+    margin-top: 25px;
+    font-weight: bold;
+}
+#sub:hover {
+    color: blueviolet;
+}
+#img_title {
+    width: 26%;
+}
+#img_description {
+    width: 42%;
+}
+#image {
+    border: none;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    margin-left: 130px;
+    margin-top: 20px;
+    font-size: 16px;
+}

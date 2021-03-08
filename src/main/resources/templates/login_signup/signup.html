@@ -6,16 +6,29 @@
     </head>
     <body>
         <div th:replace="banner_ls :: main_header"></div>
-        <h1 id="login_head">SignUp</h1>
+        <h1 id="head">SignUp</h1>
         <form id="form">
             <label for="username">Username:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="username" /><br><br>
+            <input type="text" id="username" required /><br><br>
 
-            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="email" id="email" /><br><br>
+            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="email" id="email" required /><br><br>
 
             <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="password" id="password" /><br><br>
+            <input type="password" id="password" required /><br><br>
+
+            <label for="mobile">Mobile No:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" id="mobile" name="mobile" required /><br><br>
+
+            <label for="address">Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="address" name="address" required /><br/><br/><br>
+
+            <label for="gender1">Male</label>
+            <input type="radio" id="gender1" name="radio" required />&nbsp;&nbsp;
+            <label for="gender2">Female</label>
+            <input type="radio" id="gender2" name="radio" required />&nbsp;&nbsp;
+            <label for="gender3">Others</label>
+            <input type="radio" id="gender3" name="radio" required /><br><br>
 
             <input id="sub" type="submit" value="SignUp" />
         </form>

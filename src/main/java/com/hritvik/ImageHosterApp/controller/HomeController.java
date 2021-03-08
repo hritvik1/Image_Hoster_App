@@ -33,4 +33,14 @@ public class HomeController {
     public String signup(Model model) {
         return "login_signup/signup";
     }
+
+    @RequestMapping(value = "/upload_update/upload")
+    public String upload(Model model) {
+        return "upload_update/upload";
+    }
+
+    @RequestMapping(value = "/upload_update/update")
+    public String update(Model model) {
+        return "upload_update/update";
+    }
 }
