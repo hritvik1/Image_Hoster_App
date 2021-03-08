@@ -33,7 +33,6 @@ public class UserController {
         else {
             session.setAttribute("LoggedUser", existingUser);
             session.setAttribute("usr", existingUser.getUsername());
-            session.setAttribute("loginState", true);
             System.out.println("User Found!!!");
             return "redirect:/";
         }
