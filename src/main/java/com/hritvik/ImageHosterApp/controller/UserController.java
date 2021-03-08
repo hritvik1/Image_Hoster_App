@@ -1,12 +1,14 @@
 package com.hritvik.ImageHosterApp.controller;
 
 import com.hritvik.ImageHosterApp.model.User;
+import com.hritvik.ImageHosterApp.model.UserProfile;
 import com.hritvik.ImageHosterApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -34,4 +36,25 @@ public class UserController {
             return "redirect:/";
         }
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/login_signup/signup")
+    public String Registration(Model model) {
+        User user = new User();
+        UserProfile userProfile = new UserProfile();
+        user.setUserProfile(userProfile);
+        model.addAttribute("user", user);
+        return "login_signup/signup";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/login_signup/signup")
+    public String userRegistration(User user) {
+        userService.registerUser(user);
+        return "redirect:/login_signup/login";
+    }
+
+//    @RequestMapping(value = "/users/logout")
+//    public String userLogout(HttpSession session) {
+//        session.invalidate();
+//        return "redirect:/";
+//    }
 }

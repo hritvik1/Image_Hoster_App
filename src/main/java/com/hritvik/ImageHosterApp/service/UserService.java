@@ -20,4 +20,8 @@ public class UserService {
             return existingUser;
         }
     }
+
+    public void registerUser(User newUser) {
+        userRepository.registerUser(newUser);
+    }
 }
