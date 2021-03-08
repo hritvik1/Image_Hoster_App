@@ -1,0 +1,3 @@
+function displayUser() {
+    alert("hi")
+}

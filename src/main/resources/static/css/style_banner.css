@@ -89,6 +89,9 @@ input:focus {
 #img_description {
     width: 42%;
 }
+#img_tags {
+    width: 25%;
+}
 #image {
     border: none;
     word-spacing: 1px;
@@ -96,4 +99,21 @@ input:focus {
     margin-left: 130px;
     margin-top: 20px;
     font-size: 16px;
+}
+#show_name {
+    font-family: 'Courgette', cursive;
+    margin-right: 22px;
+    font-size: 27px;
+    text-decoration: none;
+    color: #6b0af2;
+}
+#show_name span {
+    color: #eb5a07;
+}
+#show_imguploadbtn {
+    margin-right: 50%;
+    font-size: 30px;
+    font-family: 'Gochi Hand', cursive;
+    color: #0a5bf2;
+    text-decoration: underline;
 }

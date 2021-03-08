@@ -14,7 +14,8 @@
             <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="password" id="password" required /><br><br>
 
-            <input id="sub" type="submit" value="Login" />
+            <input id="sub" onclick="displayUser()" type="submit" value="Login" />
         </form>
     </body>
+    <script th:src="@{/js/display_loggeduser.js}"></script>
 </html>
