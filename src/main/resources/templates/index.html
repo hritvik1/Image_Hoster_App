@@ -1,14 +1,12 @@
 <!Doctype html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-    <head th:replace="banner :: banner-style">
-        <meta charset="UTF-8">
-        <title>Image Hoster</title>
+    <head>
+        <div th:replace="header_index :: head"></div>
+        <title>Image Hoster By Hritvik</title>
     </head>
-    <body onload="validateLogin()">
-        <div th:replace="banner :: main_header"></div>
+    <body>
+        <div th:replace="header_index :: header"></div>
         <main>
-            <!-- Iterating through each image and displaying the image, its title and the date on which it is posted-->
-            <!-- Uncomment the following piece of code-->
             <post th:each="i : ${images}">
                 <div>
                     <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>

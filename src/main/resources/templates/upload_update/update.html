@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-    <head th:replace="banner :: banner-style">
-        <meta charset="UTF-8">
+    <head>
+        <div th:replace="header_main :: head"></div>
         <title>Image Hoster - Update</title>
+        <link th:href="@{/css/style_form_update_upload.css}" rel="stylesheet">
     </head>
-    <body onload="clrTags()">
-        <div th:replace="banner :: main_header"></div>
-        <h1 id="head">Update Image</h1>
+    <body onload="disableUploadBtn()">
+        <div th:replace="header_main :: header"></div>
+        <h1 id="heading">Update Image</h1>
         <form id="form">
             <label for="img_title">Image Title:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" id="img_title" required /><br><br><br>
@@ -21,6 +22,6 @@
 
             <input id="sub" type="button" value="Update" />
         </form>
-        <script th:src="@{/js/script_upload_update.js}"></script>
+        <script th:src="@{/js/script_links.js}"></script>
     </body>
 </html>

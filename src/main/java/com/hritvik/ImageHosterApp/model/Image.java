@@ -15,7 +15,7 @@ public class Image {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "imagefile")
+    @Column(name = "imagefile", columnDefinition = "TEXT")
     private String imageFile;
 
     @Column(name = "description")

@@ -34,7 +34,7 @@ public class UserController {
             session.setAttribute("LoggedUser", existingUser);
             session.setAttribute("usr", existingUser.getUsername());
             System.out.println("User Found!!!");
-            return "redirect:/";
+            return "redirect:/User_Images";
         }
     }
 
@@ -56,6 +56,6 @@ public class UserController {
     @RequestMapping(value = "logout")
     public String userLogout(HttpSession session) {
         session.invalidate();
-        return "redirect:/login_signup/login";
+        return "redirect:/";
     }
 }
