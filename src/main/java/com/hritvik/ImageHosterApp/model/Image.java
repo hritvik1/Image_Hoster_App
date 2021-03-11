@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "image")
+@Table(name = "images")
 public class Image {
 
     @Id
@@ -21,8 +21,14 @@ public class Image {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "tags")
+    private String tags;
+
     @Column(name = "date")
     private Date date;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
 
     public Integer getId() {
         return id;
@@ -54,6 +60,14 @@ public class Image {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     public Date getDate() {

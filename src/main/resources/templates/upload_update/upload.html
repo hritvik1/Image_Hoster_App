@@ -21,11 +21,6 @@
 
             <input id="sub" type="submit" value="Upload" />
         </form>
-        <script th:inline="javascript">
-            function clrTags() {
-                document.getElementById("login").style.display = "none"
-                document.getElementById("signup").style.display = "none"
-            }
-        </script>
+        <script th:src="@{/js/script_upload_update.js}"></script>
     </body>
 </html>
