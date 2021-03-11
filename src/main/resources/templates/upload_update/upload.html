@@ -7,17 +7,17 @@
     <body onload="clrTags()">
         <div th:replace="banner :: main_header"></div>
         <h1 id="head">Upload New Image</h1>
-        <form id="form">
+        <form id="form" method="post" th:object="${image}" th:action="@{/upload_update/upload}">
             <label for="img_title">Image Title:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="img_title" required /><br><br><br>
+            <input type="text" id="img_title" name="title" required /><br><br><br>
 
             <label for="img_description">Description:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="img_description" required /><br><br><br>
+            <input type="text" id="img_description" name="description" required /><br><br><br>
 
             <label for="img_tags">Tags:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="img_tags" required /><br><br>
+            <input type="text" id="img_tags" name="tags" required /><br><br>
 
-            <input type="file" id="image" accept="image/*" required /><br><br>
+            <input type="file" id="image" accept="image/*" name="imageFile" required /><br><br>
 
             <input id="sub" type="submit" value="Upload" />
         </form>
