@@ -8,7 +8,7 @@
     <body onload="disableUploadBtn()">
         <div th:replace="header_main :: header"></div>
         <h1 id="heading">Upload New Image</h1>
-        <form id="form" method="post" th:object="${image}" th:action="@{/upload_update/upload}" enctype="multipart/form-data">
+        <form id="form" onsubmit="return fileValidate()" method="post" th:object="${image}" th:action="@{/upload_update/upload}" enctype="multipart/form-data">
             <label for="img_title">Image Title:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" id="img_title" name="title" required /><br><br><br>
 
