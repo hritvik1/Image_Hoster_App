@@ -7,11 +7,11 @@
     <body>
         <div th:replace="header_index :: header"></div>
         <main>
-            <post th:each="i : ${images}">
+            <post th:each="i : ${allImages}">
                 <div>
                     <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>
                 </div>
-                <h2 th:text="${i.title}"></h2>
+                <h2 th:text="${i.getUser.username}"></h2>
                 <i>Posted On: </i> <span th:text="${i.date}"></span>
             </post>
         </main>

@@ -32,4 +32,8 @@ public class ImageService {
     public List<Image> getAllImages() {
         return imageRepository.getAllImages();
     }
+
+    public List<Image> getUserImages(Integer userId) {
+        return imageRepository.getUserImages(userId);
+    }
 }

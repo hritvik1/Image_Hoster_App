@@ -19,12 +19,7 @@ public class HomeController {
     public String Home(Model model)
     {
         List<Image> images = imageService.getAllImages();
-        model.addAttribute("images", images);
+        model.addAttribute("allImages", images);
         return "index";
-    }
-
-    @RequestMapping(value = "/User_Images")
-    public String temp() {
-        return "User_Images";
     }
 }

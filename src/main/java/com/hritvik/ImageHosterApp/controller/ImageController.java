@@ -22,9 +22,25 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
+    @RequestMapping("/User_Images")
+    public String UserImages(Model model, HttpSession session) {
+        if(session.getAttribute("LoggedUser") == null) {
+            return "redirect:/login_signup/login";
+        } else {
+            User user = (User) session.getAttribute("LoggedUser");
+            List<Image> images = imageService.getUserImages(user.getId());
+            model.addAttribute("userImages", images);
+            return "User_Images";
+        }
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "upload_update/upload")
-    public String uploadImg() {
-        return "upload_update/upload";
+    public String uploadImg(HttpSession session) {
+        if(session.getAttribute("LoggedUser") == null) {
+            return "redirect:/login_signup/login";
+        } else {
+            return "upload_update/upload";
+        }
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "upload_update/upload")

@@ -6,5 +6,14 @@
     </head>
     <body>
     <div th:replace="header_main :: header"></div>
+    <main>
+        <post th:each="i : ${userImages}">
+            <div>
+                <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>
+            </div>
+            <h2 th:text="${i.getUser.username}"></h2>
+            <i>Posted On: </i> <span th:text="${i.date}"></span>
+        </post>
+    </main>
     </body>
 </html>
