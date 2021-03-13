@@ -3,29 +3,20 @@
     <head>
         <div th:replace="header_index :: head"></div>
         <title>Image Hoster By Hritvik</title>
+        <link th:href="@{/css/style_layout_index.css}" rel="stylesheet">
     </head>
     <body>
         <div th:replace="header_index :: header"></div>
-        <main>
-            <post th:each="i : ${allImages}">
-                <div>
-                    <img th:src="'data:image/jpeg;base64,'+${i.imageFile}"/>
-                </div>
-                <h2 th:text="${i.getUser.username}"></h2>
-                <i>Posted On: </i> <span th:text="${i.date}"></span>
-            </post>
+        <h1 id="heading">Pics Uploaded By Users</h1>
+        <main class="grid">
+            <images th:each="image : ${allImages}">
+                <article>
+                    <img th:src="'data:image/jpeg;base64,'+${image.imageFile}"/>
+                    <div class="text">
+                        <h3>by <span th:text="${image.getUser.username}"></span></h3>
+                    </div>
+                </article>
+            </images>
         </main>
     </body>
-    <script th:inline="javascript">
-        function validateLogin() {
-            const logusr = /*[[${session.LoggedUser}]]*/ 'User_Name';
-            if(logusr != null) {
-                document.getElementById("show_name").style.display = "inline"
-                document.getElementById("show_imguploadbtn").style.display = "inline"
-                document.getElementById("show_logout").style.display = "inline"
-                document.getElementById("login").style.display = "none"
-                document.getElementById("signup").style.display = "none"
-            }
-        }
-    </script>
 </html>
