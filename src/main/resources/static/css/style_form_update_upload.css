@@ -29,6 +29,7 @@ input:focus {
 }
 #form #sub:hover {
     color: blueviolet;
+    cursor: pointer;
 }
 #form #img_title {
     width: 26%;

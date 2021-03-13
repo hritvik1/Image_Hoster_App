@@ -36,4 +36,18 @@ public class ImageService {
     public List<Image> getUserImages(Integer userId) {
         return imageRepository.getUserImages(userId);
     }
+
+    public Image getImgData(Integer imageId) {
+        return imageRepository.getImgData(imageId);
+    }
+
+    public void updateImgData(Image updatedImgData, MultipartFile ufile) {
+        try {
+            updatedImgData.setImageFile(convertImgToBase64(ufile));
+            imageRepository.updateImgData(updatedImgData);
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
+    }
 }

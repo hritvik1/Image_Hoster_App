@@ -24,8 +24,11 @@ public class Image {
     @Column(name = "tags")
     private String tags;
 
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "uploaded_date")
+    private String date;
+
+    @Column(name = "updated_date")
+    private String updatedDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
@@ -70,12 +73,20 @@ public class Image {
         this.tags = tags;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(String updatedDate) {
+        this.updatedDate = updatedDate;
     }
 
     public User getUser() {

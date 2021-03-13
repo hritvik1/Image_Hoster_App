@@ -25,3 +25,12 @@ function fileValidate() {
     }
     return true
 }
+
+function toggleDesc() {
+    const btn = document.getElementById("hide")
+    if (btn.style.display === "none") {
+        btn.style.display = "block"
+    } else {
+        btn.style.display = "none"
+    }
+}

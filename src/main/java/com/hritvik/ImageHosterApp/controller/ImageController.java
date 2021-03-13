@@ -1,8 +1,8 @@
 package com.hritvik.ImageHosterApp.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import com.hritvik.ImageHosterApp.model.Image;
 import com.hritvik.ImageHosterApp.model.User;
 import com.hritvik.ImageHosterApp.service.ImageService;
@@ -22,8 +22,15 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
+    private String prevDate;
+
+    private String formatDate(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("E, dd MMM yyyy 'at' HH:mm aa");
+        return formatter.format(date);
+    }
+
     @RequestMapping("/User_Images")
-    public String UserImages(Model model, HttpSession session) {
+    public String userImages(Model model, HttpSession session) {
         if(session.getAttribute("LoggedUser") == null) {
             return "redirect:/login_signup/login";
         } else {
@@ -47,13 +54,31 @@ public class ImageController {
     public String uploadNewImage(@RequestParam("file") MultipartFile file, Image newImage, HttpSession session) {
         User user = (User) session.getAttribute("LoggedUser");
         newImage.setUser(user);
-        newImage.setDate(new Date());
+        newImage.setDate(formatDate(new Date()));
         imageService.uploadImage(newImage, file);
         return "redirect:/User_Images";
     }
 
-    @RequestMapping(value = "/upload_update/update")
-    public String updateImage(Model model) {
+    @RequestMapping(method = RequestMethod.GET, value = "/updateImage")
+    public String getImageData(@RequestParam(name = "imageId") Integer imageId, Model model) {
+        Image image = imageService.getImgData(imageId);
+        prevDate = image.getDate();
+        model.addAttribute("imgData", image);
         return "upload_update/update";
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/updateImage")
+    public String updateImage(@RequestParam(name = "imageId") Integer imageId, @RequestParam("ufile") MultipartFile ufile, Image updatedImgData, HttpSession session) {
+        if(session.getAttribute("LoggedUser") == null) {
+            return "redirect:/login_signup/login";
+        } else {
+            updatedImgData.setId(imageId);
+            updatedImgData.setDate(prevDate);
+            updatedImgData.setUpdatedDate(formatDate(new Date()));
+            User user = (User) session.getAttribute("LoggedUser");
+            updatedImgData.setUser(user);
+            imageService.updateImgData(updatedImgData, ufile);
+            return "redirect:/User_Images";
+        }
     }
 }

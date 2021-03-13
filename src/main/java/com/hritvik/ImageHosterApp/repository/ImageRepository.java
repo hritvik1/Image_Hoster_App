@@ -40,4 +40,23 @@ public class ImageRepository {
         List<Image> result = query.getResultList();
         return result;
     }
+
+    public Image getImgData(Integer imageId) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        return entityManager.find(Image.class, imageId);
+    }
+
+    public void updateImgData(Image updatedImgData) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.merge(updatedImgData);
+            transaction.commit();
+        }
+        catch(Exception e) {
+            System.out.println(e);
+            transaction.rollback();
+        }
+    }
 }
