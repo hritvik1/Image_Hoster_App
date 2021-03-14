@@ -26,12 +26,14 @@ function fileValidate() {
     return true
 }
 
-function toggleDesc() {
-    const btn = document.getElementById("hide")
-    if (btn.style.display === "none") {
-        btn.style.display = "block"
+function toggleDesc(imgId) {
+    const id = 'hideDesc_id' + imgId
+    const desc = document.getElementById(id)
+
+    if (desc.style.display === "none") {
+        desc.style.display = "block"
     } else {
-        btn.style.display = "none"
+        desc.style.display = "none"
     }
 }
 

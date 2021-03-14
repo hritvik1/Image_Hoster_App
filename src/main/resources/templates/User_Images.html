@@ -14,7 +14,7 @@
                     <img th:src="'data:image/jpeg;base64,'+${image.imageFile}"/>
                     <div class="text">
                         <h3 id="imgName" th:text="${image.title}"></h3>
-                        <div id="hide">
+                        <div style="display: none" th:id="'hideDesc_id' + ${image.id}">
                             <p id="desc" class="info" th:text="${image.description}"></p>
                             <p class="info"><u>Tags</u>: <span th:text="${image.tags}"></span></p>
                         </div>
@@ -28,7 +28,7 @@
                         <form onsubmit="return confirmDelete()" th:action="@{/deleteImage(imageId=${image.id})}" th:method="delete">
                             <button type="submit" id="btn2">Delete Pic</button>
                         </form>
-                        <button onclick="toggleDesc()" id="btn3">Show Description</button>
+                        <button th:onclick="|toggleDesc('${image.id}')|" id="btn3">Show Description</button>
                     </div>
                 </article>
             </images>

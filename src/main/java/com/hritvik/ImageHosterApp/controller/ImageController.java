@@ -25,7 +25,7 @@ public class ImageController {
     private String prevDate;
 
     private String formatDate(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("E, dd MMM yyyy 'at' HH:mm aa");
+        SimpleDateFormat formatter = new SimpleDateFormat("E, dd MMM yyyy 'at' hh:mm aa");
         return formatter.format(date);
     }
 
