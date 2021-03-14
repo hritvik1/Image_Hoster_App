@@ -34,3 +34,12 @@ function toggleDesc() {
         btn.style.display = "none"
     }
 }
+
+function confirmDelete() {
+    const confirmDel = confirm("Are You Sure You Want To Delete This Image??");
+    if (confirmDel == true) {
+        return true
+    } else {
+        return false
+    }
+}

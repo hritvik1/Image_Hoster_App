@@ -50,4 +50,8 @@ public class ImageService {
             System.out.println(e);
         }
     }
+
+    public void deleteImage(Integer imageId) {
+        imageRepository.deleteImage(imageId);
+    }
 }

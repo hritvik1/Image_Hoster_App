@@ -81,4 +81,10 @@ public class ImageController {
             return "redirect:/User_Images";
         }
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/deleteImage")
+    public String deleteImage(@RequestParam(name = "imageId") Integer imageId) {
+        imageService.deleteImage(imageId);
+        return "redirect:/User_Images";
+    }
 }

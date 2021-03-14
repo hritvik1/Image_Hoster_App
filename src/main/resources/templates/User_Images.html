@@ -25,7 +25,9 @@
                     </div>
                     <div id="buttons">
                         <a th:href="@{/updateImage(imageId=${image.id})}"><button id="btn1">Update Pic</button></a>
-                        <button id="btn2">Delete Pic</button>
+                        <form onsubmit="return confirmDelete()" th:action="@{/deleteImage(imageId=${image.id})}" th:method="delete">
+                            <button type="submit" id="btn2">Delete Pic</button>
+                        </form>
                         <button onclick="toggleDesc()" id="btn3">Show Description</button>
                     </div>
                 </article>

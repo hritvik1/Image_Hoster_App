@@ -62,6 +62,9 @@
 .grid article #buttons #btn1, .grid article #buttons #btn2 {
     width: 20%;
 }
+.grid article #buttons form {
+    display: inline;
+}
 .grid article #buttons #btn3 {
     width: 31%;
 }
