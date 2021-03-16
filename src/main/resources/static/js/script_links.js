@@ -19,8 +19,8 @@ function fileValidate() {
     const file     = document.getElementById("image"),
           fileSize = (file.files.item(0).size)/(1024*1024)
 
-    if(fileSize > 10) {
-        alert("File Size Must Be Less Than 10 MB")
+    if(fileSize > 2) {
+        alert("File Size Must Be Less Than 2 MB")
         return false
     }
     return true
