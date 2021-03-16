@@ -9,9 +9,9 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/imagehosterdb"/>
-            <property name="javax.persistence.jdbc.user" value="postgres"/>
-            <property name="javax.persistence.jdbc.password" value="maini123"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-159-175-113.compute-1.amazonaws.com:5432/d5esif9r096q4l"/>
+            <property name="javax.persistence.jdbc.user" value="vwkalhkqbdqvpy"/>
+            <property name="javax.persistence.jdbc.password" value="0db809dc0cb9e0cd2a5f4f69d6e16a5e21e5126eb55972524615387c62f3a18a"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
             <property name="hibernate.temp.use_jdbc_metadata.defaults" value="false"/>
             <property name="hibernate.show_sql" value="true"/>
