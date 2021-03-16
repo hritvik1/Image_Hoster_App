@@ -3,6 +3,8 @@ package com.hritvik.ImageHosterApp.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
+
 import com.hritvik.ImageHosterApp.model.Image;
 import com.hritvik.ImageHosterApp.model.User;
 import com.hritvik.ImageHosterApp.service.ImageService;
@@ -26,6 +28,7 @@ public class ImageController {
 
     private String formatDate(Date date) {
         SimpleDateFormat formatter = new SimpleDateFormat("E, dd MMM yyyy 'at' hh:mm aa");
+        formatter.setTimeZone(TimeZone.getTimeZone("IST"));
         return formatter.format(date);
     }
 
