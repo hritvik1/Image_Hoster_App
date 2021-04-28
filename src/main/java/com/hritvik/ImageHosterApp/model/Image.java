@@ -1,7 +1,6 @@
 package com.hritvik.ImageHosterApp.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "images")
